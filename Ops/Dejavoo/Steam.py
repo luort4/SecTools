@@ -68,6 +68,11 @@ def ops_onboard(df, df1, driver):
             eph_fullName = df['First Name'][i] + " " + df['Last Name'][i]
             fullName.append(eph_fullName)
             email.append(df['Email Address Gsuite Primary'][i])
+        else:
+            fullName.append("Nothing")
+            userName.append("Nothing")
+            email.append("Nothing")
+            
     df1['userName'] = userName
     df1['fullName'] = fullName
     df1['email'] = email

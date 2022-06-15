@@ -62,12 +62,17 @@ def ops_onboard(df, df1, driver):
     fullName = []
     email = []
     for i, j in enumerate(df['Department']):
-        if j == "Operations Team": # and df['Home Base'][i] == 'Orlando':
-            print(df1)
+        if j == "Operations Team" and df['Home Base'][i] == 'Orlando':
             eph_fullName = df['First Name'][i] + " " + df['Last Name'][i]
             fullName.append(eph_fullName)
             userName.append(fullName[i] + " SPIN")
             email.append(df['Email Address Gsuite Primary'][i])
+            print(email, userName, fullName)
+        else:
+            fullName.append("Nothing")
+            userName.append("Nothing")
+            email.append("Nothing")
+
     df1['userName'] = userName
     df1['fullName'] = fullName
     df1['email'] = email

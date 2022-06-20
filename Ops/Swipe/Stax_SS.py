@@ -15,9 +15,9 @@ def swipe_automate(driver, df1):
     #login and then
     print("Current Dataframe, to be entered: \n", df1)
     driver.get("https://app.swipesimple.com/sign_in")
-    driver.find_element(By.XPATH, '//*[@id="login-username"]').send_keys(creds.usernameStax)
+    driver.find_element(By.XPATH, '//*[@id="login-username"]').send_keys(creds.usernameSwipeStax)
     time.sleep(1)
-    driver.find_element(By.XPATH, '//*[@id="login-password"]').send_keys(creds.passwordStax + Keys.RETURN)
+    driver.find_element(By.XPATH, '//*[@id="login-password"]').send_keys(creds.passwordSwipeStax + Keys.RETURN)
     input("Press Enter to start inputing users: ")
     driver.get(addUser_url)
     for i, j in enumerate(df1['fullName']):

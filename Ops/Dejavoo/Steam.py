@@ -72,7 +72,7 @@ def ops_onboard(df, df1, driver):
             fullName.append("Nothing")
             userName.append("Nothing")
             email.append("Nothing")
-            
+
     df1['userName'] = userName
     df1['fullName'] = fullName
     df1['email'] = email
@@ -109,10 +109,12 @@ def main():
     driver = Chrome(service=s, options=options)
 
     # set the dataframes
-    df = pd.read_csv("../../Onboarding/db/empemails.csv")
+    df = pd.read_csv("Onboarding/db/empemails.csv")
     df1 = pd.DataFrame(columns=['fullName', 'userName', 'password', 'email'])
     # start the function
     ops_onboard(df, df1, driver)
     os.system("pyclean . -q")
 
-main()
+    # add something to delete the files in /temp
+
+#main()

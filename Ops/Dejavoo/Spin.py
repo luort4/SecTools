@@ -109,10 +109,10 @@ def main():
     driver = Chrome(service=s, options=options)
 
     # set the dataframes
-    df = pd.read_csv("../../Onboarding/db/empemails.csv")
+    df = pd.read_csv("Onboarding/db/empemails.csv")
     df1 = pd.DataFrame(columns=['fullName', 'userName', 'password', 'email'])
     # start the function
     ops_onboard(df, df1, driver)
     os.system("pyclean . -q")
 
-main()
+#main()

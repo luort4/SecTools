@@ -18,9 +18,9 @@ def steam_automate(driver, df1):
     #login and then
     print("Current Dataframe, to be entered: \n", df1)
     driver.get("https://dvmms.com/steam/login.aspx")
-    driver.find_element(By.XPATH, '//*[@id="ContentPH_LoginTbl_txtUser"]').send_keys(creds.usernamePD)
+    driver.find_element(By.XPATH, '//*[@id="ContentPH_LoginTbl_txtUser"]').send_keys(creds.usernameDvmmsPD)
     time.sleep(1)
-    driver.find_element(By.XPATH, '//*[@id="ContentPH_LoginTbl_txtPWD"]').send_keys(creds.passwordPD + Keys.RETURN)
+    driver.find_element(By.XPATH, '//*[@id="ContentPH_LoginTbl_txtPWD"]').send_keys(creds.passwordDvmmsPD + Keys.RETURN)
     # driver.find_element(By.XPATH, '//*[@id="ContentPH_LoginTbl_btnLogin"]').click()
     print("Press Enter to start inputing users: ")
     input()
@@ -109,10 +109,10 @@ def main():
     driver = Chrome(service=s, options=options)
 
     # set the dataframes
-    df = pd.read_csv("../../Onboarding/db/empemails.csv")
+    df = pd.read_csv("Onboarding/db/empemails.csv")
     df1 = pd.DataFrame(columns=['fullName', 'userName', 'password', 'email'])
     # start the function
     ops_onboard(df, df1, driver)
     os.system("pyclean . -q")
 
-main()
+#main()

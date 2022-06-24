@@ -5,15 +5,17 @@ from Ops.NMI import nmi_fm
 from Ops.NMI import PD_nmi
 from Ops.Swipe import PD_SS
 from Ops.Swipe import Stax_SS
-
+from Ops.Mxconnect import MxCon
+import os
 
 def ask_user():
     user_input = input('''
 Which Platform do the users need access to? Enter a number from the list below, press q to quit:
     1.) Dejavoo
     2.) NMI
-    3.) Swipe\n
-    ''')
+    3.) Swipe
+    4.) MxConnect\n
+number:''')
     if user_input == "1":
         PD.main()
         Spin.main()
@@ -24,6 +26,8 @@ Which Platform do the users need access to? Enter a number from the list below, 
     elif user_input == "3":
         PD_SS.main()
         Stax_SS.main()
+    elif user_input == "4":
+        MxCon.main()
     else:
         print("Good Bye")
         exit()
@@ -36,7 +40,10 @@ Which Platform do the users need access to? Enter a number from the list below, 
         pass
 
 def main():
+    print(os.listdir())
     ask_user()
 
+    # removes any stored copy information.
+    os.system("rm temp/*")
 
 main()

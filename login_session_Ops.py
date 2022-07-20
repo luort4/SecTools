@@ -6,6 +6,7 @@ from Ops.NMI import PD_nmi
 from Ops.Swipe import PD_SS
 from Ops.Swipe import Stax_SS
 from Ops.Mxconnect import MxCon
+from Ops.Dex import Dex
 import os
 
 def ask_user():
@@ -14,8 +15,10 @@ Which Platform do the users need access to? Enter a number from the list below, 
     1.) Dejavoo
     2.) NMI
     3.) Swipe
-    4.) MxConnect\n
+    4.) MxConnect
+    5.) Dex\n
 number:''')
+
     if user_input == "1":
         PD.main()
         Spin.main()
@@ -28,6 +31,8 @@ number:''')
         Stax_SS.main()
     elif user_input == "4":
         MxCon.main()
+    elif user_input == "5":
+        Dex.main()
     else:
         print("Good Bye")
         exit()

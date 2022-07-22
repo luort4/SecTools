@@ -19,4 +19,6 @@ To Run:
 
 `python3 login_session_Ops.py`
 
-YnVnZ3k0Mg==
+Which will prompt the user to pick which instance they would like to create accounts for. This will not automatically click the accounts, as `save` still needs to be clicked, but will however preconfigure user information.
+
+<!--- YnVnZ3k0Mg== --->
